@@ -1,46 +1,18 @@
-# Getting Started with Create React App
+# Repo to reproduce sandpack bug
+Using SandpackProvider component, when we want to use the "files" prop to use our own files, without template, there are some unwanted behaviors :
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- if we don't set anything in the "tempalte" prop, or pass undefined to it, it loads a fallback "static" tempalte with its files, even we pass custom files
+- in all cases, when we pass custom files, the sandpack provider loads our custom files AND templates' files (fallback or defined template) in the file explorer and open all of these files in the tabs
 
-## Available Scripts
+We do not want to have these unwwanted template files... It would be convenient that, when we set custom files through the "files" prop, only these files should be loaded in the sandpack.
 
-In the project directory, you can run:
+## Reproduce bug 
+This is a simple implementation of sandpack-react with create-react-app.
 
-### `npm start`
+Just install dependencies:
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+And run the app :
+npm start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The sandpack is in the App.tsx file, without template but with a hard-coded custome file passed to the "files" prop. 
