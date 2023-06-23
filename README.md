@@ -2,7 +2,7 @@
 Using SandpackProvider component, when we want to use the "files" prop to use our own files, without template, there are some unwanted behaviors :
 
 - if we don't set anything in the "template" prop, or pass `undefined` to it, it loads a fallback "static" tempalte with its files, even we pass custom files
-- in all cases, when we pass custom files, the sandpack provider loads our custom files AND templates' files (fallback or defined template) in the file explorer and open all of these files in the tabs
+- in all cases, when we pass custom files, the sandpack provider loads our custom files AND templates' files (fallback or defined template) in the file explorer.
 
 ![image](https://github.com/jkergal/bug-sandpack/assets/89657288/045612cc-f1d9-4dae-971f-5dc62ddbc624)
 
