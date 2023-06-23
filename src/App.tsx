@@ -6,7 +6,7 @@ function App() {
   return (
     <SandpackProvider
       style={{ height: '100vh' }}
-      files={{ '/PROUT.tsx': '' }}
+      files={{ '/CUSTOMFILE.tsx': '' }}
       // template={undefined}
     >
         <SandpackLayout
